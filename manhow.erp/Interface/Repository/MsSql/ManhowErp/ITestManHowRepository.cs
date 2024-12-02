@@ -23,6 +23,6 @@ namespace Interface.Repository.MsSql.ManhowErp
         /// </summary>
         /// <param name="typeCode"></param>
         /// <returns></returns>
-        Task<List<TestEum>> GetTestConponyInfo();
+        Task<List<TestEum>> GetTestConponyInfo(int require);
     }
 }

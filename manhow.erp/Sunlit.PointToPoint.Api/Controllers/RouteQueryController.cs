@@ -57,18 +57,19 @@ namespace Sunlit.PointToPoint.Api.Controllers
         /// <summary>
         /// 公司基本資料維護
         /// </summary>
+        /// <param name="require">公司別</param>
         /// <returns></returns>
         [HttpGet]
         [Route("Test")]
         [SwaggerResponse(200, Description = "成功", Type = typeof(ResponseModel<List<MenuModel<int>>>))]
         [SwaggerResponse(400, Description = "失敗", Type = typeof(ResponseModel<string>))]
-        public async Task<IActionResult> CompanyInformation()
+        public async Task<IActionResult> CompanyInformation(int require)
         {
             var result = new ResponseModel<List<CompanyInfo>>()
             {
                 statusCode = 200,
                 message = "",
-                data = await _testManhowErpService.GetCompanyInformation()
+                data = await _testManhowErpService.GetCompanyInformation(require)
             };
 
             return Ok(result);

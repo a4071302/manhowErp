@@ -31,9 +31,9 @@ namespace Service.RouteQuery
             }).ToList();
         }
         
-        public async Task<List<CompanyInfo>> GetCompanyInformation()
+        public async Task<List<CompanyInfo>> GetCompanyInformation(int require)
         {
-            var items = await _testManHowRepository.GetTestConponyInfo();
+            var items = await _testManHowRepository.GetTestConponyInfo(require);
             //return items;
 
 

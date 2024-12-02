@@ -20,7 +20,7 @@ namespace Interface.Service.RouteQuery
         /// </summary>
         /// <param name="require"></param>
         /// <returns></returns>
-        Task<List<CompanyInfo>> GetCompanyInformation();
+        Task<List<CompanyInfo>> GetCompanyInformation(int require);
 
     }
 }
