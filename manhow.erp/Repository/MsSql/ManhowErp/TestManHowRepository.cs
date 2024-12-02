@@ -36,13 +36,16 @@ WHERE Id = @typeCode;";
 
         }
 
-        public async Task<List<TestEum>> GetTestConponyInfo()
+        public async Task<List<TestEum>> GetTestConponyInfo(int require)
         {
 
             string sql = @"SELECT * 
-FROM CarPallet;";
+FROM CarPallet 
+WHERE Id = @require;";
 
-            var tmp = await _db.QueryAsync<TestEum>(sql);
+            var tmp = await _db.QueryAsync<TestEum>(sql, new {
+                require
+            });
 
             return tmp.Any() ? tmp.ToList() : new List<TestEum>();
 
