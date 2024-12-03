@@ -16,15 +16,22 @@ namespace Sunlit.Dispatch.Api.Middlewares
         //private readonly IDistributedCache _cache;
         private readonly JwtHelper _jwt;
         private readonly IServiceProvider _serviceProvider;
+        private readonly List<string> _ipWhitelist;
+
         public JwtMiddleware(RequestDelegate next
             
             , JwtHelper jwt
-            , IServiceProvider serviceProvider)
+            , IServiceProvider serviceProvider
+            , IConfiguration configuration)
         {
             _next = next;
             //_cache = cache;
             _jwt = jwt;
             _serviceProvider = serviceProvider;
+
+            // 從配置文件中讀取 IpWhitelist
+            _ipWhitelist = configuration.GetSection("IpRateLimiting:IpWhitelist").Get<List<string>>();
+
         }
 
         /// <summary>
@@ -34,6 +41,22 @@ namespace Sunlit.Dispatch.Api.Middlewares
         /// <returns></returns>
         public async Task Invoke(HttpContext context)
         {
+            #region 防火牆 (只允許特定IP通過)
+
+            var clientIp = context.Connection.RemoteIpAddress?.ToString();
+
+            // 檢查請求 IP 是否在白名單內
+            if (!_ipWhitelist.Contains(clientIp))
+            {
+                // IP 不在白名單中，終止請求並返回 403
+                context.Response.StatusCode = StatusCodes.Status403Forbidden;
+                await context.Response.WriteAsync("Your IP is not allowed");
+            }          
+
+            #endregion
+
+
+
             Tuple<bool, string> ValidateResult = new Tuple<bool, string>(false, string.Empty);
             string token = context.Request.Headers["Authorization"];
             bool isAllowAnonymousRequest = IsAllowAnonymousRequest(context.Request.Path.Value.ToLower());

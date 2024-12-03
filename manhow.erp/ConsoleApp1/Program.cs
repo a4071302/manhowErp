@@ -7,6 +7,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
 using Repository;
+using System.Net;
 
 
 #region
@@ -149,30 +150,40 @@ class Program
 
     public static async Task Main(string[] args)
     {
-        // 建立 Host 並註冊服務
-        var host = Host.CreateDefaultBuilder(args)
-            .ConfigureAppConfiguration(config =>
-            {
-                config.AddJsonFile("appsettings.json", optional: false, reloadOnChange: true);
-            })
-            .ConfigureServices((context, services) =>
-            {
-                services.AddSqlServerContext(); // 註冊 IErpDbContext
-                services.AddScoped<Program>(); // 註冊 Program 類型
-            })
-            .Build();
+        //// 建立 Host 並註冊服務
+        //var host = Host.CreateDefaultBuilder(args)
+        //    .ConfigureAppConfiguration(config =>
+        //    {
+        //        config.AddJsonFile("appsettings.json", optional: false, reloadOnChange: true);
+        //    })
+        //    .ConfigureServices((context, services) =>
+        //    {
+        //        services.AddSqlServerContext(); // 註冊 IErpDbContext
+        //        services.AddScoped<Program>(); // 註冊 Program 類型
+        //    })
+        //    .Build();
 
 
-        // 從 DI 容器中解析出 Program 實例
-        var program = host.Services.GetRequiredService<Program>();
+        //// 從 DI 容器中解析出 Program 實例
+        //var program = host.Services.GetRequiredService<Program>();
 
-        Console.WriteLine("請按下某個按鍵來查詢資料...");
-        var key = Console.ReadKey(true).Key;
+        //Console.WriteLine("請按下某個按鍵來查詢資料...");
+        //var key = Console.ReadKey(true).Key;
 
-        if (key == ConsoleKey.Enter)  // 當按下 Enter 鍵時
+        //if (key == ConsoleKey.Enter)  // 當按下 Enter 鍵時
+        //{
+        //    await program.GetDataFromDatabase1();  // 呼叫非靜態的 GetDataFromDatabase 方法
+        //}
+        String strHostName = string.Empty;
+        IPHostEntry ipEntry = Dns.GetHostEntry(Dns.GetHostName());
+        IPAddress[] addr = ipEntry.AddressList;
+
+        for (int i = 0; i < addr.Length; i++)
         {
-            await program.GetDataFromDatabase1();  // 呼叫非靜態的 GetDataFromDatabase 方法
+            Console.WriteLine("IP Address {0}: {1} ", i, addr[i].ToString());
         }
+
+
     }
 
     // 使用注入的 IErpDbContext 來查詢資料

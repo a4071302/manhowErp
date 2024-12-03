@@ -60,7 +60,7 @@ namespace Sunlit.PointToPoint.Api.Controllers
         /// <param name="require">公司別</param>
         /// <returns></returns>
         [HttpGet]
-        [Route("Test")]
+        [Route("Test01")]
         [SwaggerResponse(200, Description = "成功", Type = typeof(ResponseModel<List<MenuModel<int>>>))]
         [SwaggerResponse(400, Description = "失敗", Type = typeof(ResponseModel<string>))]
         public async Task<IActionResult> CompanyInformation(int require)

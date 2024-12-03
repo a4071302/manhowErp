@@ -116,6 +116,67 @@
           }
         }
       }
+    },
+    "/api/RouteQuery/Test01": {
+      "get": {
+        "tags": [
+          "RouteQuery"
+        ],
+        "summary": "公司基本資料維護",
+        "parameters": [
+          {
+            "name": "require",
+            "in": "query",
+            "description": "公司別",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "成功",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Int32MenuModelListResponseModel"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Int32MenuModelListResponseModel"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Int32MenuModelListResponseModel"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "失敗",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/StringResponseModel"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StringResponseModel"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StringResponseModel"
+                }
+              }
+            }
+          }
+        }
+      }
     }
   },
   "components": {

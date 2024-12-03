@@ -8,8 +8,12 @@ using Service;
 using Sunlit.Dispatch.Api.Middlewares;
 using Sunlit.PointToPoint.Api.Middelwares;
 using System.Text;
+using AspNetCoreRateLimit;
 
 var builder = WebApplication.CreateBuilder(args);
+
+
+
 // 加入appsettings.json的配置
 var configuration = builder.Configuration;
 // Add services to the container.
@@ -99,7 +103,28 @@ builder.Services.AddSwaggerGen(c =>
 });
 #endregion
 
+
+
+#region 軟體防火牆設置
+// 添加 MemoryCache，這是限流所需
+builder.Services.AddMemoryCache();
+// 配置限流選項
+builder.Services.Configure<IpRateLimitOptions>(builder.Configuration.GetSection("IpRateLimiting"));
+
+// 註冊限流的服務
+builder.Services.AddInMemoryRateLimiting();
+
+// 添加限流的依賴
+builder.Services.AddSingleton<IRateLimitConfiguration, RateLimitConfiguration>();
+
+
+
+#endregion
 var app = builder.Build();
+
+// 配置防火牆限流中介軟體
+app.UseIpRateLimiting();
+
 
 // Configure the HTTP request pipeline.
 var _mb = 1000000;
@@ -147,4 +172,5 @@ app.UseAuthorization();
 app.MapControllers();
 
 app.Run();
+
 

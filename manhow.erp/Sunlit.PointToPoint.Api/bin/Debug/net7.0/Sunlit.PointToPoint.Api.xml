@@ -63,6 +63,13 @@
             </summary>
             <returns></returns>
         </member>
+        <member name="M:Sunlit.PointToPoint.Api.Controllers.RouteQueryController.CompanyInformation(System.Int32)">
+            <summary>
+            公司基本資料維護
+            </summary>
+            <param name="require">公司別</param>
+            <returns></returns>
+        </member>
         <member name="T:Sunlit.PointToPoint.Api.Middelwares.ExceptionMiddleware">
             <summary>
             Exception 中介層，
