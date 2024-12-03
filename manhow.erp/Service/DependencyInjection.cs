@@ -14,7 +14,7 @@ namespace Service
         {
             return services
                  .AddSingleton<JwtHelper>()
-                 .AddScoped<ITestManhowErpService, TestManhowErpService>()
+                 .AddScoped<IManhowErpService, ManhowErpService>()
                  .AddScoped<ITokenService, TokenService>()
                  //.AddScoped<JwtHelper>()
                 ;

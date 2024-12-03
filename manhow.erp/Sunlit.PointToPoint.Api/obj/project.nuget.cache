@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "CuY3BPNtRqc=",
+  "dgSpecHash": "WVys/eSVzUM=",
   "success": true,
-  "projectFilePath": "C:\\Users\\user\\Desktop\\manhow.erp\\Sunlit.PointToPoint.Api\\Sunlit.PointToPoint.Api.csproj",
+  "projectFilePath": "C:\\Users\\user\\Desktop\\manhow.erp\\Sunlit.PointToPoint.Api\\Manhow.PointToPoint.Api.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\user\\.nuget\\packages\\aspnetcoreratelimit\\5.0.0\\aspnetcoreratelimit.5.0.0.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\azure.core\\1.38.0\\azure.core.1.38.0.nupkg.sha512",

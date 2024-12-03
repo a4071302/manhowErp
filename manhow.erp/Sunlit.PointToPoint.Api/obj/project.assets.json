@@ -6729,9 +6729,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\user\\Desktop\\manhow.erp\\Sunlit.PointToPoint.Api\\Sunlit.PointToPoint.Api.csproj",
-      "projectName": "Sunlit.PointToPoint.Api",
-      "projectPath": "C:\\Users\\user\\Desktop\\manhow.erp\\Sunlit.PointToPoint.Api\\Sunlit.PointToPoint.Api.csproj",
+      "projectUniqueName": "C:\\Users\\user\\Desktop\\manhow.erp\\Sunlit.PointToPoint.Api\\Manhow.PointToPoint.Api.csproj",
+      "projectName": "Manhow.PointToPoint.Api",
+      "projectPath": "C:\\Users\\user\\Desktop\\manhow.erp\\Sunlit.PointToPoint.Api\\Manhow.PointToPoint.Api.csproj",
       "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\user\\Desktop\\manhow.erp\\Sunlit.PointToPoint.Api\\obj\\",
       "projectStyle": "PackageReference",

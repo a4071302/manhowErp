@@ -1,6 +1,111 @@
 [
   {
-    "ContainingType": "Sunlit.PointToPoint.Api.Controllers.RouteQueryController",
+    "ContainingType": "Sunlit.PointToPoint.Api.Controllers.ManhowController",
+    "Method": "CreatCompanyInformation",
+    "RelativePath": "api/RouteQuery/CreatCompanyInformation",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "require",
+        "Type": "Model.ManhowErpTable.TestTable.CompanyEum",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Model.Response.ResponseModel\u00601[[System.Collections.Generic.List\u00601[[Model.ManhowErpTable.TestTable.CompanyEum, Model, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      },
+      {
+        "Type": "Model.Response.ResponseModel\u00601[[System.String, System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 400
+      }
+    ]
+  },
+  {
+    "ContainingType": "Sunlit.PointToPoint.Api.Controllers.ManhowController",
+    "Method": "DeleteCompanyInformation",
+    "RelativePath": "api/RouteQuery/DeleteCompanyInformation",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "require",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Model.Response.ResponseModel\u00601[[System.String, System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      },
+      {
+        "Type": "Model.Response.ResponseModel\u00601[[System.String, System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 400
+      }
+    ]
+  },
+  {
+    "ContainingType": "Sunlit.PointToPoint.Api.Controllers.ManhowController",
+    "Method": "GetCompanyInformation",
+    "RelativePath": "api/RouteQuery/GetCompanyInfo",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "require",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Model.Response.ResponseModel\u00601[[System.Collections.Generic.List\u00601[[Model.ManhowErpTable.TestTable.CompanyEum, Model, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      },
+      {
+        "Type": "Model.Response.ResponseModel\u00601[[System.String, System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 400
+      }
+    ]
+  },
+  {
+    "ContainingType": "Sunlit.PointToPoint.Api.Controllers.ManhowController",
     "Method": "Test",
     "RelativePath": "api/RouteQuery/Test",
     "HttpMethod": "GET",
@@ -29,22 +134,22 @@
     ]
   },
   {
-    "ContainingType": "Sunlit.PointToPoint.Api.Controllers.RouteQueryController",
-    "Method": "CompanyInformation",
-    "RelativePath": "api/RouteQuery/Test01",
-    "HttpMethod": "GET",
+    "ContainingType": "Sunlit.PointToPoint.Api.Controllers.ManhowController",
+    "Method": "UpdateCompanyInformation",
+    "RelativePath": "api/RouteQuery/UpdateCompanyInformation",
+    "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
         "Name": "require",
-        "Type": "System.Int32",
-        "IsRequired": false
+        "Type": "Model.ManhowErpTable.TestTable.CompanyEum",
+        "IsRequired": true
       }
     ],
     "ReturnTypes": [
       {
-        "Type": "Model.Response.ResponseModel\u00601[[System.Collections.Generic.List\u00601[[Model.Response.MenuModel\u00601[[System.Int32, System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], Model, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "Type": "Model.Response.ResponseModel\u00601[[System.Collections.Generic.List\u00601[[Model.ManhowErpTable.TestTable.CompanyEum, Model, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
         "MediaTypes": [
           "text/plain",
           "application/json",

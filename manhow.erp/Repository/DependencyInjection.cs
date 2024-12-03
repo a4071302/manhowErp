@@ -24,7 +24,7 @@ namespace Repository
             return services
                 .AddSqlServerContext()
                 .AddOracleContext()                
-                .AddScoped<ITestManHowRepository, TestManHowRepository>()                
+                .AddScoped<IManHowRepository, ManHowRepository>()                
                 .AddScoped<ITokenRepository, TokenRepository>()                
                 ;
         }

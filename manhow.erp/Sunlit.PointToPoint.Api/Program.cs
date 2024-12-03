@@ -161,7 +161,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-app.UseMiddleware<JwtMiddleware>();
+//app.UseMiddleware<JwtMiddleware>();
 app.UseMiddleware<LogMiddleware>();
 app.UseMiddleware<ExceptionMiddleware>(); ////¤¤¤¶¼h
 
